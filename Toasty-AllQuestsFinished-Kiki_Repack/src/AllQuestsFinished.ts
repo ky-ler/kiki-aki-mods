@@ -19,15 +19,10 @@ class AllQuestsFinished implements IPostDBLoadMod
 
       fileData.conditions.AvailableForFinish = [
       {
-        "_parent": "Level",
-        "_props":
-        {
-          "compareMethod": ">=",
-          "value": "1",
-          "index": 0,
-          "parentId": "",
-          "id": "Exist"
-        }
+        ...fileData.conditions.AvailableForFinish[0],
+        compareMethod: ">=",
+        conditionType: "Level",
+        value: "1",
       }]
     }
   }
